@@ -1,7 +1,16 @@
-import "./App.css";
 import React from "react";
+import "./App.css";
 
 function App() {
+	const handleClick = (e) => {
+		const answer = e.target.value;
+		if (answer === "스페이스 엑스") {
+			alert("정답 👏👏👏");
+		} else {
+			alert("오답 😣😣😣");
+		}
+	};
+
 	return (
 		<div className="container">
 			<div className="app">
@@ -14,10 +23,18 @@ function App() {
 					</div>
 				</div>
 				<div className="answer-section">
-					<button>스페이스 엑스</button>
-					<button>테슬라</button>
-					<button>보링 컴퍼니</button>
-					<button>솔라시티</button>
+					<button onClick={handleClick} value="스페이스 엑스">
+						스페이스 엑스
+					</button>
+					<button onClick={handleClick} value="테슬라">
+						테슬라
+					</button>
+					<button onClick={handleClick} value="보링 컴퍼니">
+						보링 컴퍼니
+					</button>
+					<button onClick={handleClick} value="솔라시티">
+						솔라시티
+					</button>
 				</div>
 			</div>
 		</div>
