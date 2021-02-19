@@ -2,6 +2,16 @@ import React from "react";
 import "./App.css";
 
 function App() {
+	const quiz = {
+		question: "일론 머스크의 우주 탐사 기업 이름은?",
+		answers: [
+			{ text: "스페이스 엑스", isCorrect: true },
+			{ text: "테슬라", isCorrect: false },
+			{ text: "보링 컴퍼니", isCorrect: false },
+			{ text: "솔라시티", isCorrect: false },
+		],
+	};
+
 	const handleClick = (e) => {
 		const answer = e.target.value;
 		if (answer === "스페이스 엑스") {
@@ -18,23 +28,14 @@ function App() {
 					<h1 className="question-header">
 						<span>1</span>/4
 					</h1>
-					<div className="question-text">
-						일론 머스크의 우주 탐사 기업 이름은?
-					</div>
+					<div className="question-text">{quiz.question}</div>
 				</div>
 				<div className="answer-section">
-					<button onClick={handleClick} value="스페이스 엑스">
-						스페이스 엑스
-					</button>
-					<button onClick={handleClick} value="테슬라">
-						테슬라
-					</button>
-					<button onClick={handleClick} value="보링 컴퍼니">
-						보링 컴퍼니
-					</button>
-					<button onClick={handleClick} value="솔라시티">
-						솔라시티
-					</button>
+					{quiz.answers.map((answer) => (
+						<button value={answer.text} onClick={handleClick}>
+							{answer.text}
+						</button>
+					))}
 				</div>
 			</div>
 		</div>
