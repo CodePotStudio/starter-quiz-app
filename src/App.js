@@ -12,9 +12,8 @@ function App() {
 		],
 	};
 
-	const handleClick = (e) => {
-		const answer = e.target.value;
-		if (answer === "스페이스 엑스") {
+	const handleClick = (isCorrect) => {
+		if (isCorrect) {
 			alert("정답 👏👏👏");
 		} else {
 			alert("오답 😣😣😣");
@@ -32,7 +31,10 @@ function App() {
 				</div>
 				<div className="answer-section">
 					{quiz.answers.map((answer) => (
-						<button value={answer.text} onClick={handleClick}>
+						<button
+							value={answer.text}
+							onClick={() => handleClick(answer.isCorrect)}
+						>
 							{answer.text}
 						</button>
 					))}
