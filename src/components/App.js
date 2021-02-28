@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { QUIZZES } from "./constants";
-import "./App.css";
+import { QUIZZES } from "../constants";
+import "../App.css";
+import Button from "./Button";
 
 function App() {
 	const [currentNo, setCurrentNo] = useState(0);
@@ -38,12 +39,10 @@ function App() {
 					</div>
 					<div className="answer-section">
 						{QUIZZES[currentNo].answers.map((answer) => (
-							<button
-								value={answer.text}
+							<Button
+								text={answer.text}
 								onClick={() => handleClick(answer.isCorrect)}
-							>
-								{answer.text}
-							</button>
+							></Button>
 						))}
 					</div>
 				</div>
