@@ -50,14 +50,14 @@ function App() {
 		}
 	};
 
-	const convertedScore = parseInt((score / quizzes.length) * 100);
+	const convertedScore = Math.floor((score / quizzes.length) * 100);
 
 	return (
 		<div className="container">
 			{showResult ? (
 				<div className="app">
-					<h1 class="result-header">당신의 점수는?</h1>
-					<p class="result-score">{convertedScore}</p>
+					<h1 className="result-header">당신의 점수는?</h1>
+					<p className="result-score">{convertedScore}</p>
 				</div>
 			) : (
 				<div className="app">
