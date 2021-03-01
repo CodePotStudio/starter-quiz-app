@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { QUIZZES } from "../constants";
-import "../App.css";
-import Button from "./Button";
 import { ThemeProvider } from "styled-components";
 import theme from "../theme";
+import Container from "./Container";
+import AnswerGroup from "./AnswerGroup";
+import QuestionSection from "./QuestionSection";
+import ResultSection from "./ResultSection";
+import GlobalStyle from "../globalStyle";
 
 function App() {
 	const [currentNo, setCurrentNo] = useState(0);
@@ -21,36 +24,21 @@ function App() {
 			setCurrentNo((currentNo) => currentNo + 1);
 		}
 	};
-
 	const convertedScore = Math.floor((score / QUIZZES.length) * 100);
 
 	return (
 		<ThemeProvider theme={theme}>
-			<div className="container">
-				{showResult ? (
-					<div className="app">
-						<h1 className="result-header">당신의 점수는?</h1>
-						<p className="result-score">{convertedScore}</p>
-					</div>
-				) : (
-					<div className="app">
-						<div className="question-section">
-							<h1 className="question-header">
-								<span>{QUIZZES[currentNo].id}</span>/{QUIZZES.length}
-							</h1>
-							<div className="question-text">{QUIZZES[currentNo].question}</div>
-						</div>
-						<div className="answer-section">
-							{QUIZZES[currentNo].answers.map((answer) => (
-								<Button
-									text={answer.text}
-									onClick={() => handleClick(answer.isCorrect)}
-								></Button>
-							))}
-						</div>
-					</div>
-				)}
-			</div>
+			<GlobalStyle />
+			{showResult ? (
+				<Container>
+					<ResultSection convertedScore={convertedScore}></ResultSection>
+				</Container>
+			) : (
+				<Container>
+					<QuestionSection currentNo={currentNo} />
+					<AnswerGroup currentNo={currentNo} handleClick={handleClick} />
+				</Container>
+			)}
 		</ThemeProvider>
 	);
 }
