@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { QUIZZES } from "../constants";
 import "../App.css";
 import Button from "./Button";
+import { ThemeProvider } from "styled-components";
+import theme from "../theme";
 
 function App() {
 	const [currentNo, setCurrentNo] = useState(0);
@@ -23,31 +25,33 @@ function App() {
 	const convertedScore = Math.floor((score / QUIZZES.length) * 100);
 
 	return (
-		<div className="container">
-			{showResult ? (
-				<div className="app">
-					<h1 className="result-header">당신의 점수는?</h1>
-					<p className="result-score">{convertedScore}</p>
-				</div>
-			) : (
-				<div className="app">
-					<div className="question-section">
-						<h1 className="question-header">
-							<span>{QUIZZES[currentNo].id}</span>/{QUIZZES.length}
-						</h1>
-						<div className="question-text">{QUIZZES[currentNo].question}</div>
+		<ThemeProvider theme={theme}>
+			<div className="container">
+				{showResult ? (
+					<div className="app">
+						<h1 className="result-header">당신의 점수는?</h1>
+						<p className="result-score">{convertedScore}</p>
 					</div>
-					<div className="answer-section">
-						{QUIZZES[currentNo].answers.map((answer) => (
-							<Button
-								text={answer.text}
-								onClick={() => handleClick(answer.isCorrect)}
-							></Button>
-						))}
+				) : (
+					<div className="app">
+						<div className="question-section">
+							<h1 className="question-header">
+								<span>{QUIZZES[currentNo].id}</span>/{QUIZZES.length}
+							</h1>
+							<div className="question-text">{QUIZZES[currentNo].question}</div>
+						</div>
+						<div className="answer-section">
+							{QUIZZES[currentNo].answers.map((answer) => (
+								<Button
+									text={answer.text}
+									onClick={() => handleClick(answer.isCorrect)}
+								></Button>
+							))}
+						</div>
 					</div>
-				</div>
-			)}
-		</div>
+				)}
+			</div>
+		</ThemeProvider>
 	);
 }
 

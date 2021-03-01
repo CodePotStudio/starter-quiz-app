@@ -51,22 +51,3 @@ body {
 	align-items: center;
 	margin-bottom: 8px;
 }
-
-button {
-	font-size: 16px;
-	color: #ffffff;
-	background-color: rgb(115, 98, 255);
-	border-radius: 5px;
-	border: 0px;
-	height: 56px;
-	padding: 4px;
-	margin: 4px;
-	cursor: pointer;
-	width: 100%;
-	outline: none;
-	font-weight: 700;
-}
-
-button:hover {
-	background-color: #a99fee;
-}
