@@ -1,0 +1,18 @@
+/* components/Button/Button.css */
+.answer {
+	font-size: 16px;
+	color: #ffffff;
+	background-color: #7362ff;
+	border-radius: 5px;
+	border: 0px;
+	height: 56px;
+	padding: 4px;
+	margin: 4px;
+	cursor: pointer;
+	width: 100%;
+	outline: none;
+	font-weight: 700;
+}
+.answer:hover {
+	background-color: #a99fee;
+}
