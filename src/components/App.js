@@ -1,28 +1,46 @@
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { QUIZZES } from "../constants";
+import { ThemeProvider } from "styled-components";
+import theme from "../theme";
+import Container from "./Container";
+import AnswerGroup from "./AnswerGroup";
+import QuestionSection from "./QuestionSection";
+import ResultSection from "./ResultSection";
+import GlobalStyle from "../globalStyle";
 
-const Home = () => <div>Home</div>;
-const MyPage = () => <div>MyPage</div>;
-const About = () => <div>About</div>;
+function App() {
+	const [currentNo, setCurrentNo] = useState(0);
+	const [showResult, setShowResult] = useState(false);
+	const [score, setScore] = useState(0);
 
-const App = () => {
+	const handleClick = (isCorrect) => {
+		if (isCorrect) {
+			setScore((score) => score + 1);
+		}
+		// 마지막 퀴즈인지 체크하기
+		if (currentNo === QUIZZES.length - 1) {
+			setShowResult(true);
+		} else {
+			setCurrentNo((currentNo) => currentNo + 1);
+		}
+	};
+	const convertedScore = Math.floor((score / QUIZZES.length) * 100);
+
 	return (
-		<Router>
-			<ul>
-				<li>
-					<Link to="/">Home</Link>
-				</li>
-				<li>
-					<Link to="/mypage">MyPage</Link>
-				</li>
-				<li>
-					<Link to="/about">About</Link>
-				</li>
-			</ul>
-			<Route path="/mypage" component={MyPage} />
-			<Route path="/about" component={About} />
-			<Route path="/" exact component={Home} />
-		</Router>
+		<ThemeProvider theme={theme}>
+			<GlobalStyle />
+			{showResult ? (
+				<Container>
+					<ResultSection convertedScore={convertedScore}></ResultSection>
+				</Container>
+			) : (
+				<Container>
+					<QuestionSection currentNo={currentNo} />
+					<AnswerGroup currentNo={currentNo} handleClick={handleClick} />
+				</Container>
+			)}
+		</ThemeProvider>
 	);
-};
+}
 
 export default App;
