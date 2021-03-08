@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useHistory } from "react-router";
 import AnswerGroup from "../../components/AnswerGroup";
 import Container from "../../components/Container";
 import QuestionSection from "../../components/QuestionSection";
