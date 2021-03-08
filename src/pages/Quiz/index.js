@@ -1,14 +1,12 @@
 import { useState } from "react";
+import { useHistory } from "react-router";
 import AnswerGroup from "../../components/AnswerGroup";
 import Container from "../../components/Container";
 import QuestionSection from "../../components/QuestionSection";
-import ResultSection from "../../components/ResultSection";
 import { QUIZZES } from "../../constants";
 
-const Quiz = () => {
+const Quiz = ({ setScore }) => {
 	const [currentNo, setCurrentNo] = useState(0);
-	const [showResult, setShowResult] = useState(false);
-	const [score, setScore] = useState(0);
 
 	const handleClick = (isCorrect) => {
 		if (isCorrect) {
@@ -16,18 +14,12 @@ const Quiz = () => {
 		}
 		// 마지막 퀴즈인지 체크하기
 		if (currentNo === QUIZZES.length - 1) {
-			setShowResult(true);
 		} else {
 			setCurrentNo((currentNo) => currentNo + 1);
 		}
 	};
-	const convertedScore = Math.floor((score / QUIZZES.length) * 100);
 
-	return showResult ? (
-		<Container>
-			<ResultSection convertedScore={convertedScore}></ResultSection>
-		</Container>
-	) : (
+	return (
 		<Container>
 			<QuestionSection currentNo={currentNo} />
 			<AnswerGroup currentNo={currentNo} handleClick={handleClick} />
