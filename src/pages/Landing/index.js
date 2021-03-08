@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Title = styled.h1`
 	font-size: 40px;
 	font-weight: bold;
-	margin-bottom: 8px;
+	margin: 8px 0px;
 	text-align: center;
 	color: ${(props) => props.theme.primaryColor100};
 `;
