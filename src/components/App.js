@@ -15,7 +15,7 @@ function App() {
 			<GlobalStyle />
 			<Router>
 				<Route path="/result">
-					<Result score={score} />
+					<Result score={score} setScore={setScore} />
 				</Route>
 				<Route path="/quiz">
 					<Quiz setScore={setScore} />
