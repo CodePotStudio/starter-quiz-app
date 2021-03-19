@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import theme from "../theme";
-import GlobalStyle from "../globalStyle";
+import theme from "theme";
+import GlobalStyle from "globalStyle";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Quiz from "../pages/Quiz";
-import Landing from "../pages/Landing";
-import Result from "../pages/Result";
+import { Quiz, Landing, Result } from "pages";
 
 function App() {
 	const [score, setScore] = useState(0);

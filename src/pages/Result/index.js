@@ -1,8 +1,6 @@
-import Container from "../../components/Container";
-import ResultSection from "../../components/ResultSection";
-import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import { QUIZZES } from "../../constants";
+import { Button, ResultSection, Container } from "components";
 
 const Result = ({ score, setScore }) => {
 	const convertedScore = Math.floor((score / QUIZZES.length) * 100);

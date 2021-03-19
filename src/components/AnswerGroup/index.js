@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { QUIZZES } from "../../constants";
-import Button from "../Button";
+import { Button } from "components";
 
 const AnswerGroupWrapper = styled.div`
 	display: flex;
