@@ -43,7 +43,7 @@ const Landing = () => (
 			계신가요?
 		</Text>
 		<Link to="/quiz">
-			<Button text="일론 머스크 지수 알아보기"></Button>
+			<Button>일론 머스크 지수 알아보기</Button>
 		</Link>
 	</Container>
 );

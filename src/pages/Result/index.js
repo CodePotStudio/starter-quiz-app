@@ -8,7 +8,7 @@ const Result = ({ score, setScore }) => {
 		<Container>
 			<ResultSection convertedScore={convertedScore}></ResultSection>
 			<Link to="/">
-				<Button text="테스트 다시하기" onClick={() => setScore(0)}></Button>
+				<Button onClick={() => setScore(0)}>테스트 다시하기</Button>
 			</Link>
 		</Container>
 	);
