@@ -1,5 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+const StyledLink = styled(Link)`
+	width: 100%;
+`;
 
 const StyledButton = styled.button`
   font-size: ${(props) => (props.fontSize === "big" ? "32px" : "16px")};
@@ -20,7 +25,12 @@ const StyledButton = styled.button`
 }
 `;
 
-const Button = (props) => (
-	<StyledButton onClick={props.onClick}>{props.children}</StyledButton>
-);
+const Button = ({ to, onClick, children }) =>
+	to ? (
+		<StyledLink to={to}>
+			<StyledButton onClick={onClick}>{children}</StyledButton>
+		</StyledLink>
+	) : (
+		<StyledButton onClick={onClick}>{children}</StyledButton>
+	);
 export default Button;
