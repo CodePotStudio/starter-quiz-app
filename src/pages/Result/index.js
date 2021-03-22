@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { QUIZZES } from "../../constants";
 import { Button, ResultSection, Container } from "components";
 
