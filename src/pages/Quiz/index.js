@@ -13,7 +13,7 @@ const Quiz = ({ setScore }) => {
 		}
 		// 마지막 퀴즈인지 체크하기
 		if (currentNo === QUIZZES.length - 1) {
-			history.push("/result");
+			history.push("/loading");
 		} else {
 			setCurrentNo((currentNo) => currentNo + 1);
 		}
