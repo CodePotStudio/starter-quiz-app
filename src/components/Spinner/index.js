@@ -1,14 +1,28 @@
 import ScaleLoader from "react-spinners/ScaleLoader";
+import styled from "styled-components";
+import { useContext } from "react";
+import { ThemeContext } from "styled-components";
 
-const Spinner = ({ loading }) => {
+const Flex = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
+
+const Spinner = () => {
+	const themeContext = useContext(ThemeContext);
+	const color = themeContext.primaryColor100;
+
 	return (
-		<ScaleLoader
-			size={100}
-			height="160"
-			width="32"
-			color="#6b5ce7"
-			radius="8"
-		/>
+		<Flex>
+			<ScaleLoader
+				size={100}
+				height="160"
+				width="32"
+				color={color}
+				radius="8"
+			/>
+		</Flex>
 	);
 };
 
