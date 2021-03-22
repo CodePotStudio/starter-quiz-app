@@ -9,6 +9,8 @@ const FlexBox = styled.div`
 const ContainerWrapper = styled.div`
 	width: 400px;
 	margin-top: 72px;
+	display: flex;
+	flex-direction: column;
 `;
 
 const Container = (props) => (
