@@ -7,7 +7,7 @@ const FlexBox = styled.div`
 	align-items: center;
 `;
 const ContainerWrapper = styled.div`
-	width: 400px;
+	width: 500px;
 	margin-top: 72px;
 	display: flex;
 	flex-direction: column;
