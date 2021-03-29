@@ -1,3 +1,4 @@
+//constants.js
 const QUIZZES = [
 	{
 		id: 1,
@@ -27,6 +28,26 @@ const QUIZZES = [
 			{ text: "Alpha Exploration co.", isCorrect: false },
 			{ text: "X.com", isCorrect: true },
 			{ text: "Everything CO.", isCorrect: false },
+		],
+	},
+	{
+		id: 4,
+		question: "일론 머스크가 테슬라 투자하고, 최대 주주로 등극한 시기는?",
+		answers: [
+			{ text: "2001년", isCorrect: false },
+			{ text: "2002년", isCorrect: false },
+			{ text: "2003년", isCorrect: false },
+			{ text: "2004년", isCorrect: true },
+		],
+	},
+	{
+		id: 5,
+		question: "테슬라 내에서 일론 머스크의 직함은?",
+		answers: [
+			{ text: "Master of coin", isCorrect: false },
+			{ text: "Chairman", isCorrect: false },
+			{ text: "CEO", isCorrect: false },
+			{ text: "Technoking", isCorrect: true },
 		],
 	},
 ];

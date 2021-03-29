@@ -1,8 +1,6 @@
-import { QUIZZES } from "../../constants";
 import { Button, ResultSection, Container } from "components";
 
-const Result = ({ score, setScore }) => {
-	const convertedScore = Math.floor((score / QUIZZES.length) * 100);
+const Result = ({ convertedScore, setScore }) => {
 	return (
 		<Container>
 			<ResultSection convertedScore={convertedScore}></ResultSection>

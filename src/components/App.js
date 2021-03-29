@@ -4,22 +4,24 @@ import theme from "theme";
 import GlobalStyle from "globalStyle";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Quiz, Landing, Result, Loading } from "pages";
+import { QUIZZES } from "../constants";
 
 function App() {
 	const [score, setScore] = useState(0);
+	const convertedScore = Math.floor((score / QUIZZES.length) * 100);
 
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
 			<Router>
 				<Route path="/result">
-					<Result score={score} setScore={setScore} />
+					<Result convertedScore={convertedScore} setScore={setScore} />
 				</Route>
 				<Route path="/quiz">
 					<Quiz setScore={setScore} />
 				</Route>
 				<Route path="/loading">
-					<Loading />
+					<Loading convertedScore={convertedScore} />
 				</Route>
 				<Route path="/" exact>
 					<Landing />

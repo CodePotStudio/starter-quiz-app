@@ -11,9 +11,24 @@ const Title = styled.h1`
 	text-align: center;
 `;
 
-const Loading = () => {
+const getCCode = (score) => {
+	let cCode;
+	if (score > 75) {
+		cCode = "elon";
+	} else if (score > 50) {
+		cCode = "kimbal";
+	} else if (score > 25) {
+		cCode = "bezos";
+	} else {
+		cCode = "timemachine";
+	}
+	return cCode;
+};
+
+const Loading = ({ convertedScore }) => {
 	const [title, setTitle] = useState("결과 분석중");
 	let history = useHistory();
+	const cCode = getCCode(convertedScore);
 
 	useEffect(() => {
 		const id = setTimeout(() => {
@@ -23,8 +38,8 @@ const Loading = () => {
 	}, [title]);
 
 	useEffect(() => {
-		setTimeout(() => history.push("/result"), 2000);
-	}, [history]);
+		setTimeout(() => history.push(`/result/${cCode}`), 2000);
+	}, [history, cCode]);
 
 	return (
 		<Container>
