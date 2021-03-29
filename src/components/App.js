@@ -14,7 +14,7 @@ function App() {
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
 			<Router>
-				<Route path="/result">
+				<Route path="/result/:cCode">
 					<Result convertedScore={convertedScore} setScore={setScore} />
 				</Route>
 				<Route path="/quiz">
