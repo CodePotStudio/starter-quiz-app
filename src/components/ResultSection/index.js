@@ -1,3 +1,4 @@
+import { SocialButtonGroup } from "components";
 import React from "react";
 import styled from "styled-components";
 import RESULT from "./result";
@@ -29,6 +30,7 @@ const ResultSection = ({ cCode }) => (
 		<SectionTitle>당신은 혹시?</SectionTitle>
 		<StyledImage src={RESULT[cCode].src} />
 		<ResultTitle>{RESULT[cCode].title}</ResultTitle>
+		<SocialButtonGroup></SocialButtonGroup>
 	</>
 );
 export default ResultSection;
