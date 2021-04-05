@@ -12,7 +12,6 @@ import elon from "assets/images/elon.jpg";
 function App() {
 	const [score, setScore] = useState(0);
 	const convertedScore = Math.floor((score / QUIZZES.length) * 100);
-	// 현재 URL 가져오기
 	const currentUrl = window.location.href;
 
 	return (
