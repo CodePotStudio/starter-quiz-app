@@ -19,12 +19,16 @@ function App() {
 			<Helmet>
 				<title>일론 머스크 지수 테스트하기</title>
 				<link rel="icon" href={favicon} />
+				{/* URL 정보 */}
 				<meta property="og:url" content={currentUrl} />
+				{/* title 정보 */}
 				<meta property="og:title" content="일론 머스크 지수 테스트하기" />
+				{/* 페이지 상세 정보 */}
 				<meta
 					property="og:description"
 					content="나는 일론 머스크에 대해서 얼마나 알고 있을까?"
 				/>
+				{/* 페이지 대표 이미지 정보 */}
 				<meta property="og:image" content={elon} />
 			</Helmet>
 			<GlobalStyle />
