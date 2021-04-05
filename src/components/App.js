@@ -19,7 +19,6 @@ function App() {
 			<Helmet>
 				<title>일론 머스크 지수 테스트하기</title>
 				<link rel="icon" href={favicon} />
-				<meta property="og:title" content="Hello" />
 				<meta property="og:url" content={currentUrl} />
 				<meta property="og:title" content="일론 머스크 지수 테스트하기" />
 				<meta
