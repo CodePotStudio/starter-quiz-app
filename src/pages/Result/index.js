@@ -6,7 +6,6 @@ import {
 } from "components";
 import { useParams } from "react-router";
 import { Helmet } from "react-helmet";
-import elon from "assets/images/elon.jpg";
 import RESULT from "components/ResultSection/result";
 
 const Result = ({ setScore }) => {
