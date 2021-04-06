@@ -2,7 +2,6 @@ import styled from "styled-components";
 import cover from "assets/images/cover.jpg";
 import { Container, Button } from "components";
 import { Helmet } from "react-helmet";
-import favicon from "assets/images/favicon.ico";
 import elon from "assets/images/elon.jpg";
 
 const Title = styled.h1`
@@ -39,8 +38,6 @@ const Landing = () => {
 	return (
 		<>
 			<Helmet>
-				<title>일론 머스크 지수 테스트하기</title>
-				<link rel="icon" href={favicon} />
 				{/* URL 정보 */}
 				<meta property="og:url" content={currentUrl} />
 				{/* title 정보 */}
