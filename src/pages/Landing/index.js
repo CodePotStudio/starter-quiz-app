@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import cover from "assets/images/cover.jpg";
 import { Container, Button } from "components";
+import { Helmet } from "react-helmet";
+import favicon from "assets/images/favicon.ico";
+import elon from "assets/images/elon.jpg";
 
 const Title = styled.h1`
 	font-size: 40px;
@@ -31,18 +34,38 @@ const Text = styled.p`
 	margin-bottom: 24px;
 `;
 
-const Landing = () => (
-	<Container>
-		<Title>일론 머스크 지수 테스트</Title>
-		<SubTitle>나는 일론 머스크에 대해서 얼마나 알고 있을까?</SubTitle>
-		<StyledImage src={cover} alt="cover"></StyledImage>
-		<Text>
-			2021년 2월 기준 세계 2위 억만장자 일론 머스크. 테슬라, 스타링크, 스페이스
-			X, 뉴럴링크까지 많은 혁신 기업을 배출한 일론 머스크에 대해서 얼마나 알고
-			계신가요?
-		</Text>
-		<Button to="/quiz">일론 머스크 지수 알아보기</Button>
-	</Container>
-);
+const Landing = () => {
+	const currentUrl = window.location.href;
+	return (
+		<>
+			<Helmet>
+				<title>일론 머스크 지수 테스트하기</title>
+				<link rel="icon" href={favicon} />
+				{/* URL 정보 */}
+				<meta property="og:url" content={currentUrl} />
+				{/* title 정보 */}
+				<meta property="og:title" content="일론 머스크 지수 테스트하기" />
+				{/* 페이지 상세 정보 */}
+				<meta
+					property="og:description"
+					content="나는 일론 머스크에 대해서 얼마나 알고 있을까?"
+				/>
+				{/* 페이지 대표 이미지 정보 */}
+				<meta property="og:image" content={elon} />
+			</Helmet>
+			<Container>
+				<Title>일론 머스크 지수 테스트</Title>
+				<SubTitle>나는 일론 머스크에 대해서 얼마나 알고 있을까?</SubTitle>
+				<StyledImage src={cover} alt="cover"></StyledImage>
+				<Text>
+					2021년 2월 기준 세계 2위 억만장자 일론 머스크. 테슬라, 스타링크,
+					스페이스 X, 뉴럴링크까지 많은 혁신 기업을 배출한 일론 머스크에 대해서
+					얼마나 알고 계신가요?
+				</Text>
+				<Button to="/quiz">일론 머스크 지수 알아보기</Button>
+			</Container>
+		</>
+	);
+};
 
 export default Landing;
