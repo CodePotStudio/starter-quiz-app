@@ -49,6 +49,13 @@ const Landing = () => {
 				/>
 				{/* 페이지 대표 이미지 정보 */}
 				<meta property="og:image" content={elon} />
+				{/* 트위터 메타 정보 */}
+				<meta name="twitter:title" content="일론 머스크 지수 테스트하기" />
+				<meta
+					name="twitter:description"
+					content="나는 일론 머스크에 대해서 얼마나 알고 있을까?"
+				/>
+				<meta name="twitter:image" content={elon} />
 			</Helmet>
 			<Container>
 				<Title>일론 머스크 지수 테스트</Title>
