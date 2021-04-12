@@ -17,6 +17,11 @@ function App() {
 			<Helmet>
 				<title>일론 머스크 지수 테스트하기</title>
 				<link rel="icon" href={favicon} />
+				<script
+					data-ad-client="ca-pub-8400392513417741"
+					async
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+				></script>
 			</Helmet>
 			<GlobalStyle />
 			<Router>
