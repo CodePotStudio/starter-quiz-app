@@ -11,6 +11,7 @@ const ContainerWrapper = styled.div`
 	margin-top: 72px;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 `;
 
 const Container = (props) => (
