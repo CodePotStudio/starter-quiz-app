@@ -25,12 +25,16 @@ const StyledButton = styled.button`
 }
 `;
 
-const Button = ({ to, onClick, children }) =>
+const Button = ({ to, onClick, children, fontSize }) =>
 	to ? (
 		<StyledLink to={to}>
-			<StyledButton onClick={onClick}>{children}</StyledButton>
+			<StyledButton onClick={onClick} fontSize={fontSize}>
+				{children}
+			</StyledButton>
 		</StyledLink>
 	) : (
-		<StyledButton onClick={onClick}>{children}</StyledButton>
+		<StyledButton onClick={onClick} fontSize={fontSize}>
+			{children}
+		</StyledButton>
 	);
 export default Button;
