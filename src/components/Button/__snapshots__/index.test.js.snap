@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hello 버튼 컴포넌트 테스트 1`] = `
+<button
+  className="sc-dlfnbm fBmWev"
+  onClick={[Function]}
+>
+  Hello
+</button>
+`;
